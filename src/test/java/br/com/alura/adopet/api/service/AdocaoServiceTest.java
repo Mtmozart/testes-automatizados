@@ -25,45 +25,45 @@ import static org.mockito.BDDMockito.then;
 
 @ExtendWith(MockitoExtension.class)
 class AdocaoServiceTest {
-        @InjectMocks
-        private AdocaoService service;
+    @InjectMocks
+    private AdocaoService service;
 
-        @Mock
-        private AdocaoRepository repository;
+    @Mock
+    private AdocaoRepository repository;
 
-        @Mock
-        private PetRepository petRepository;
+    @Mock
+    private PetRepository petRepository;
 
-        @Mock
-        private TutorRepository tutorRepository;
+    @Mock
+    private TutorRepository tutorRepository;
 
-        @Mock
-        private EmailService emailService;
+    @Mock
+    private EmailService emailService;
 
-        @Spy
-        private List<ValidacaoSolicitacaoAdocao> validacoes = new ArrayList<>();
+    @Spy
+    private List<ValidacaoSolicitacaoAdocao> validacoes = new ArrayList<>();
 
-        @Mock
-        private ValidacaoSolicitacaoAdocao validador1;
+    @Mock
+    private ValidacaoSolicitacaoAdocao validador1;
 
     @Mock
     private ValidacaoSolicitacaoAdocao validador2;
-        @Mock
-        private Pet pet;
+    @Mock
+    private Pet pet;
 
-        @Mock
-        private Tutor tutor;
+    @Mock
+    private Tutor tutor;
 
-        @Mock
-        private Abrigo abrigo;
+    @Mock
+    private Abrigo abrigo;
 
-        private SolicitacaoAdocaoDto dto;
-        @Captor
-        private ArgumentCaptor<Adocao> adocaoCaptor;
+    private SolicitacaoAdocaoDto dto;
+    @Captor
+    private ArgumentCaptor<Adocao> adocaoCaptor;
 
     @Test
     @DisplayName("Should be saved as adoption when solicited.")
-    void scenario01(){
+    void scenario01() {
         //Arrange
         //ARRANGE
         this.dto = new SolicitacaoAdocaoDto(10l, 20l, "motivo qualquer");
@@ -83,7 +83,7 @@ class AdocaoServiceTest {
 
     @Test
     @DisplayName("Should to call validators when adoption solicited.")
-    void scenario02(){
+    void scenario02() {
         //Arrange
         //ARRANGE
         this.dto = new SolicitacaoAdocaoDto(10l, 20l, "motivo qualquer");
