@@ -62,7 +62,6 @@ class ValidacaoTutorComAdocaoEmAndamentoTest {
         listaDeAdocoes.add(adocao);
         BDDMockito.given(tutorRepository.getReferenceById(dto.idTutor())).willReturn(tutor);
         BDDMockito.given(adocaoRepository.findAll()).willReturn(listaDeAdocoes);
-
         Assertions.assertThrows(ValidacaoException.class, () -> validacaoTutorComAdocaoEmAndamento.validar(dto));
     }
 
