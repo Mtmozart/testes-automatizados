@@ -66,7 +66,7 @@ class AbrigoControllerTest {
         ).andReturn().getResponse();
 
         //ASSERT
-        assertEquals(200,response.getStatus());
+        assertEquals(201,response.getStatus());
     }
 
     @Test
